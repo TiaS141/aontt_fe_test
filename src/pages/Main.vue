@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <Button @click="opened = true">Открыть</Button>
-    <TreeDialog v-model:opened="opened" @select="select" @close="close" />
+    <TreeDialog :title="title" v-model:opened="opened" @select="select" @close="close" />
   </div>
 </template>
 
@@ -18,6 +18,7 @@
     data() {
       return {
         opened: false,
+        title: 'Дерево папок',
       }
     },
     methods: {

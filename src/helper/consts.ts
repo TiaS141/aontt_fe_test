@@ -39,7 +39,7 @@ const treeData: ITree = [
           { name: 'cat' },
           {
             name: 'child folder 2.3',
-            children: [{ name: 'dog' }, { name: 'cat' }],
+            children: [{ name: 'dog', children: [{ name: 'dog' }, { name: 'cat' }] }, { name: 'cat' }],
           },
         ],
       },

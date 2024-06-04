@@ -1,6 +1,6 @@
 <template>
   <Modal v-if="opened" @closeModal="close">
-    <template v-slot:header> Дерево папок </template>
+    <template v-slot:header> {{ title }} </template>
     <template v-slot:body>
       <ul>
         <Tree v-for="(item, index) in treeData" :key="index" class="item" :item="item" />
@@ -20,7 +20,14 @@
     name: 'TreeDialog',
     components: { Modal, Tree },
     props: {
-      opened: Boolean,
+      opened: {
+        type: Boolean,
+        required: true,
+      },
+      title: {
+        type: String,
+        required: true,
+      },
     },
     data() {
       return {
