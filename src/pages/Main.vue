@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Button @click="opened = true">Открыть</Button>
+    <Button @click="open">Открыть</Button>
     <TreeDialog :title="title" v-model:opened="opened" @select="select" @close="close" />
   </div>
 </template>
@@ -25,6 +25,9 @@
       select(item: ITreeItem) {
         this.close()
         alert(item.name ?? 'Папка не выбрана')
+      },
+      open() {
+        this.opened = true
       },
       close() {
         this.opened = false

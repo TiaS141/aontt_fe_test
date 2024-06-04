@@ -11,10 +11,10 @@
 
       <div class="modal-footer">
         <slot name="footer">
-          <Button type="submit" value="Submit" class="modal-default-button" @click.once="$emit('closeModal', true)">
+          <Button type="submit" value="Submit" class="modal-default-button" @click.prevent="$emit('closeModal', true)">
             Ок
           </Button>
-          <Button class="modal-default-button" @click.once="$emit('closeModal', false)"> Закрыть </Button>
+          <Button class="modal-default-button" @click.prevent="$emit('closeModal', false)"> Закрыть </Button>
         </slot>
       </div>
     </div>
